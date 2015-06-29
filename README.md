@@ -1,0 +1,4 @@
+# generator-yossy
+
+## Gulp template
+

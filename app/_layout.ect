@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<title><%- @title %></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<% content 'meta' %>
+<% content 'styles' %>
+<% content 'header_scripts' %>
+</head>
+<body>
+
+<header class="header"></header>
+
+<% content 'nav' %>
+
+<div id="wrapper">
+
+<% content 'main' %>
+<% content 'aside' %>
+
+</div>
+
+<footer class="footer"></footer>
+
+<% content 'scripts' %>
+
+</body>
+</html>

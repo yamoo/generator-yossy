@@ -1,0 +1,94 @@
+<% extend '_layout.ect' %>
+
+<% block 'meta' : %>
+<meta name="description" content="<%- @description %>" />
+<meta name="keywords" content="<%- @keywords %>" />
+<% if @canonical : %>
+<link rel="canonical" href="<%- @canonical %>">
+<% end %>
+<% if @alternate : %>
+<link rel="alternate" href="<%- @alternate %>" >
+<% end %>
+
+
+<% if @ogTitle : %>
+<meta property="og:title" content="<%- @ogTitle %>">
+<% end %>
+<% if @ogType : %>
+<meta property="og:type" content="<%- @ogType %>">
+<% end %>
+<% if @ogDescription : %>
+<meta property="og:description" content="<%- @ogDescription %>">
+<% end %>
+<% if @ogUrl : %>
+<meta property="og:url" content="<%- @ogUrl %>">
+<% end %>
+<% if @ogImage : %>
+<meta property="og:image" content="<%- @ogImage %>">
+<% end %>
+<% if @ogSiteName : %>
+<meta property="og:site_name" content="<%- @ogSiteName %>">
+<% end %>
+<% if @ogEmail : %>
+<meta property="og:email" content="<%- @ogEmail %>">
+<% end %>
+
+<% if @fbAppId : %>
+<meta property="fb:app_id" content="<%- @fbAppId %>" />
+<% end %>
+<% if @twitterCard : %>
+<meta name="twitter:card" value="<%- @twitterCard %>"/>
+<% end %>
+<% if @twitterSiteId : %>
+<meta name="twitter:site:id" value="<%- @twitterSiteId %>"/>
+<% end %>
+
+<% end %>
+
+<% block 'styles' : %>
+<!-- build:css css/app.css -->
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/glyphs.css">
+<link rel="stylesheet" href="/css/sprites.css">
+<!-- endbuild -->
+<% end %>
+
+<% block 'header_scripts' : %>
+<!--[if lt IE 9]>
+<!-- build:js js/html5shiv.js -->
+<script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+<!-- endbuild -->
+<![endif]-->
+<!-- build:js js/modernizr.js -->
+<script src="../bower_components/modernizr/modernizr.js"></script>
+<!-- endbuild -->
+<% end %>
+
+<% block 'scripts' : %>
+<!-- build:js js/app.js -->
+<!-- bower:js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<!-- endbower -->
+<script src="/js/main.js"></script>
+<!-- endbuild -->
+<% end %>
+
+<% block 'nav' : %>
+<nav class="nav">
+<ul>
+<li><span>ccc</span></li>
+<li><a href="#">menu</a></li>
+<li><a href="#">menu</a></li>
+<li><a href="#">menu</a></li>
+<li><a href="#">menu</a></li>
+</ul>
+</nav>
+<% end %>
+
+<% block 'main' : %>
+<main class="main"></main>
+<% end %>
+
+<% block 'aside' : %>
+<aside class="aside"></aside>
+<% end %>

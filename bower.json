@@ -1,0 +1,25 @@
+{
+  "name": "template_gulp",
+  "version": "0.0.0",
+  "authors": [
+    "Yossy"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.11.3"
+  },
+  "devDependencies": {
+    "modernizr": "~2.8.3",
+    "html5shiv": "~3.7.2"
+  }
+}

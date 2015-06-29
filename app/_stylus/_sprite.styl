@@ -1,0 +1,92 @@
+/*
+Stylus variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon_home_width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon_home = x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet = width height image $spritesheet_sprites;
+*/
+$bower_name = 'bower';
+$bower_x = 0px;
+$bower_y = 0px;
+$bower_offset_x = 0px;
+$bower_offset_y = 0px;
+$bower_width = 100px;
+$bower_height = 100px;
+$bower_total_width = 200px;
+$bower_total_height = 100px;
+$bower_image = '/img/sprite.png';
+$bower = 0px 0px 0px 0px 100px 100px 200px 100px '/img/sprite.png' 'bower';
+$grunt_name = 'grunt';
+$grunt_x = 100px;
+$grunt_y = 0px;
+$grunt_offset_x = -100px;
+$grunt_offset_y = 0px;
+$grunt_width = 100px;
+$grunt_height = 100px;
+$grunt_total_width = 200px;
+$grunt_total_height = 100px;
+$grunt_image = '/img/sprite.png';
+$grunt = 100px 0px -100px 0px 100px 100px 200px 100px '/img/sprite.png' 'grunt';
+$spritesheet_width = 200px;
+$spritesheet_height = 100px;
+$spritesheet_image = '/img/sprite.png';
+$spritesheet_sprites = $bower $grunt;
+$spritesheet = 200px 100px '/img/sprite.png' $spritesheet_sprites;
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  spriteWidth($icon_home)
+}
+
+.icon-email {
+  sprite($icon_email)
+}
+*/
+spriteWidth($sprite) {
+  width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+  height: $sprite[5];
+}
+
+spritePosition($sprite) {
+  background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+  background-image: url($sprite[8]);
+}
+
+sprite($sprite) {
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of Stylus
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+sprites($spritesheet_sprites);
+*/
+sprites($sprites) {
+  for $sprite in $sprites {
+    $sprite_name = $sprite[9];
+    .{$sprite_name} {
+      sprite($sprite);
+    }
+  }
+}

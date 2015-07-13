@@ -46,43 +46,28 @@
 <% end %>
 
 <% block 'styles' : %>
-<!-- build:css css/app.css -->
-<link rel="stylesheet" href="/css/main.css">
-<link rel="stylesheet" href="/css/glyphs.css">
-<link rel="stylesheet" href="/css/sprites.css">
+<!-- build:css(.tmp/dist) css/app.css -->
+<link rel="stylesheet" href="css/main.css">
 <!-- endbuild -->
 <% end %>
 
 <% block 'header_scripts' : %>
-<!--[if lt IE 9]>
-<!-- build:js js/html5shiv.js -->
-<script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
-<!-- endbuild -->
-<![endif]-->
-<!-- build:js js/modernizr.js -->
+<!-- build:js1(app) js/modernizr.js -->
 <script src="../bower_components/modernizr/modernizr.js"></script>
 <!-- endbuild -->
 <% end %>
 
 <% block 'scripts' : %>
-<!-- build:js js/app.js -->
+<!-- build:js2(app) js/app.js -->
 <!-- bower:js -->
 <script src="../bower_components/jquery/dist/jquery.js"></script>
 <!-- endbower -->
-<script src="/js/main.js"></script>
+<script src="js/main.js"></script>
 <!-- endbuild -->
 <% end %>
 
 <% block 'nav' : %>
-<nav class="nav">
-<ul>
-<li><span>ccc</span></li>
-<li><a href="#">menu</a></li>
-<li><a href="#">menu</a></li>
-<li><a href="#">menu</a></li>
-<li><a href="#">menu</a></li>
-</ul>
-</nav>
+<nav class="nav"></nav>
 <% end %>
 
 <% block 'main' : %>

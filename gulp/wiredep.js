@@ -7,6 +7,8 @@ gulp.task('wiredep', function() {
     console.log('wiredep');
 
     return gulp.src(config.ect.watched)
-      .pipe(wiredep())
+      .pipe(wiredep({
+        // ignorePath: /(\.\.\/)*\.\./
+      }))
       .pipe(gulp.dest(config.path.markups));
 });

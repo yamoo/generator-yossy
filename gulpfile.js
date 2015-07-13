@@ -1,23 +1,42 @@
 var gulp = require('gulp');
 var runSequence = require('gulp-run-sequence');
-// var cache = require('gulp-cached');
 var requireDir = require('require-dir');
 var dir = requireDir('./gulp');
 
 var config = require('./config.js');
-// var tasks = Object.keys(gulp.tasks).sort();
-// var len = tasks.length;
 
-// cache('serve');
+// gulp.task('compile', function(cb) {
+//     runSequence(
+//         ['clean', 'wiredep'],
+//         'sprite',
+//         ['ect', 'stylus', 'imagemin']
+//     );
+// });
 
 gulp.task('serve', function(cb) {
-    // for (var i = 0; i < len; i ++) {
-    //     cache(tasks[i]);
-    // }
     runSequence(
-        ['clean', 'wiredep'],
+        ['clean_serve', 'wiredep'],
         'sprite',
-        ['ect', 'stylus'],
+        ['ect', 'stylus', 'imagemin'],
         ['browser-sync', 'watch']
+    );
+});
+
+gulp.task('preview', function(cb) {
+    runSequence(
+        ['clean_preview', 'wiredep'],
+        'sprite',
+        ['ect', 'stylus', 'imagemin'],
+        ['copy_preview']
+    );
+});
+
+gulp.task('build', function(cb) {
+    runSequence(
+        ['clean_dist', 'wiredep'],
+        'sprite',
+        ['ect', 'stylus', 'imagemin'],
+        ['copy_dist'],
+        'usemin'
     );
 });

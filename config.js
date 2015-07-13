@@ -2,12 +2,16 @@
 
 var config = {
     path: {
+        bower: 'bower_components/',
         markups: 'app/',
         styles: 'app/_stylus/',
-        img: 'app/img',
+        img: 'app/img/',
+        scripts: 'app/js/',
         tmp: '.tmp/dist/',
         tmpStyles: '.tmp/dist/css/',
-        tmpScript: '.tmp/dist/js/'
+        tmpScript: '.tmp/dist/js/',
+        preview: 'preview/',
+        dist: 'dist/'
     },
 
     ect: {
@@ -39,7 +43,7 @@ var config = {
     },
 
     usemin: {
-        src: ['.tmp/dist/*.html', '.tmp/dist/**/*.html'],
+        src: ['.tmp/dist/**'],
         dest: 'dist'
     }
 };

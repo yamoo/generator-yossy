@@ -7,6 +7,13 @@
 ### 1. Install Node.js
 [Download from Node.js official site](http://nodejs.org/), or use your package management software.
 
+### 2. Install Gulp.js
+* `npm install`
+  Install gulp related sources
+
+* `bower install`
+  Install bower controled sources
+
 ## Build Tasks
 * `gulp serve`
   Start localhost server with BrowserSync.

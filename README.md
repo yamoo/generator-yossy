@@ -1,4 +1,5 @@
-# generator-yossy
+# generator-yossy (under development)
+Gulp template package. It will be upgraded to yeoman generator.
 
 ## Gulp template
 

@@ -6,7 +6,7 @@ var config = require('../config.js');
 gulp.task('wiredep', function() {
     console.log('wiredep');
 
-    return gulp.src(config.ect.watched)
+    return gulp.src(config.path.markups + '**/*.ect')
       .pipe(wiredep({
         // ignorePath: /(\.\.\/)*\.\./
       }))

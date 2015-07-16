@@ -16,7 +16,7 @@ var config = require('../config.js');
 gulp.task('ect', function() {
     console.log('ect');
 
-    return gulp.src(config.ect.compiled)
+    return gulp.src(config.path.markups + '**/[^_]*.ect')
         .pipe(plumber())
         .pipe(ect({
             data: data

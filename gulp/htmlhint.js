@@ -1,10 +1,11 @@
-var gulp = require('gulp');
-var config = require('../config.js');
-var htmlhint = require('gulp-htmlhint');
+var gulp = require('gulp'),
+    htmlhint = require('gulp-htmlhint'),
+    config = require('../config.js');
 
 gulp.task('htmlhint', function() {
     console.log('htmlhint');
-    gulp.src(config.path.tmp + '*.html')
-      .pipe(htmlhint())
+
+    gulp.src(config.path.tmp + '**/*.html')
+      .pipe(htmlhint('.htmlhintrc'))
       .pipe(htmlhint.reporter());
 });

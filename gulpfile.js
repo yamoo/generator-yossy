@@ -1,23 +1,17 @@
-var gulp = require('gulp');
-var runSequence = require('gulp-run-sequence');
-var requireDir = require('require-dir');
-var dir = requireDir('./gulp');
-
-var config = require('./config.js');
-
-// gulp.task('compile', function(cb) {
-//     runSequence(
-//         ['clean', 'wiredep'],
-//         'sprite',
-//         ['ect', 'stylus', 'imagemin']
-//     );
-// });
+var gulp = require('gulp'),
+    runSequence = require('gulp-run-sequence'),
+    requireDir = require('require-dir'),
+    dir = requireDir('./gulp'),
+    config = require('./config.js');
 
 gulp.task('serve', function(cb) {
     runSequence(
         ['clean_serve', 'wiredep'],
         'sprite',
-        ['ect', 'stylus', 'imagemin'],
+        ['ect', 'imagemin', 'jshint'],
+        'stylus',
+        'csslint',
+        'autoprefixer',
         ['browser-sync', 'watch']
     );
 });
@@ -26,7 +20,10 @@ gulp.task('preview', function(cb) {
     runSequence(
         ['clean_preview', 'wiredep'],
         'sprite',
-        ['ect', 'stylus', 'imagemin'],
+        ['ect', 'imagemin', 'jshint'],
+        'stylus',
+        'csslint',
+        'autoprefixer',
         ['copy_preview']
     );
 });
@@ -35,8 +32,11 @@ gulp.task('build', function(cb) {
     runSequence(
         ['clean_dist', 'wiredep'],
         'sprite',
-        ['ect', 'stylus', 'imagemin'],
+        ['ect', 'imagemin', 'jshint'],
+        'stylus',
+        'csslint',
+        'autoprefixer',
         ['copy_dist'],
-        'usemin'
+        'useref'
     );
 });

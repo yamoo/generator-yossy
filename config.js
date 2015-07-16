@@ -5,18 +5,14 @@ var config = {
         bower: 'bower_components/',
         markups: 'app/',
         styles: 'app/_stylus/',
-        img: 'app/img/',
         scripts: 'app/js/',
+        img: 'app/img/',
+        sprite: 'app/img/_sprites/',
+        svgs: 'app/img/_svgs/',
         tmp: '.tmp/dist/',
         tmpStyles: '.tmp/dist/css/',
-        tmpScript: '.tmp/dist/js/',
         preview: 'preview/',
         dist: 'dist/'
-    },
-
-    ect: {
-        watched: ['app/*.ect', 'app/**/*.ect'],
-        compiled: 'app/[^_]*.ect'
     },
 
     stylus: {
@@ -42,8 +38,8 @@ var config = {
         ]
     },
 
-    usemin: {
-        src: ['.tmp/dist/**'],
+    useref: {
+        src: ['.tmp/dist/**/*.html'],
         dest: 'dist'
     }
 };

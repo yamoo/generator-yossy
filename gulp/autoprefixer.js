@@ -1,10 +1,11 @@
-var gulp = require('gulp');
-var config = require('../config.js');
-var autoprefixer = require('gulp-autoprefixer');
+var gulp = require('gulp'),
+    autoprefixer = require('gulp-autoprefixer'),
+    config = require('../config.js');
 
 gulp.task('autoprefixer', function() {
     console.log('autoprefixer');
-    gulp.src(config.path.tmp + 'css/*.ccss')
+
+    gulp.src(config.path.tmpStyles + '**/*.css')
         .pipe(autoprefixer({
             browsers: [
               'last 2 versions',
@@ -14,5 +15,5 @@ gulp.task('autoprefixer', function() {
               'iOS >= 7'
             ]
         }))
-        .pipe(gulp.dest(config.path.tmp + 'csss/'));
+        .pipe(gulp.dest(config.path.tmpStyles));
 });

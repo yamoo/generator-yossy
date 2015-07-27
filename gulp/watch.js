@@ -8,13 +8,17 @@ gulp.task('watch', function() {
     console.log('watch');
 
     watch('bower.json', function() {
-        gulp.start('wiredep');
+        runSequence(
+            'wiredep',
+            'browser-reload'
+        );
     });
 
     watch(config.path.markups + '**/*.ect', function() {
         runSequence(
             'ect',
-            'htmlhint'
+            'htmlhint',
+            'browser-reload'
         );
     });
 
@@ -22,24 +26,37 @@ gulp.task('watch', function() {
         runSequence(
             'stylus',
             'csslint',
-            'autoprefixer'
+            'autoprefixer',
+            'browser-reload'
         );
     });
 
     watch(config.path.scripts + '**/*.js', function() {
-        gulp.start('jshint');
+        runSequence(
+            'jshint',
+            'browser-reload'
+        );
     });
 
     watch(config.path.img + '**/*.{gif,png,jpg}', function() {
-        gulp.start('imagemin');
+        runSequence(
+            'imagemin',
+            'browser-reload'
+        );
     });
 
     watch(config.path.sprite + '**/*.png', function() {
-        gulp.start('sprite');
+        runSequence(
+            'sprite',
+            'browser-reload'
+        );
     });
 
     watch(config.path.svgs + '**/*.svg', function() {
-        gulp.start('ifonFont');
+        runSequence(
+            'iconFont',
+            'browser-reload'
+        );
     });
 
 });
